@@ -1,0 +1,48 @@
+:root {
+  --font: "Poppins", sans-serif;
+
+  --primary-color: #7b6ef6;
+  --bg-color: #121829;
+
+  --heading-color: #ebeef5;
+  --text-color: #8e95a9;
+  --yellow-orange-color: #ffad49;
+
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 20px;
+
+  /* line-height: 32px; */
+  line-height: 1.6;
+}
+
+div#root {
+  min-height: inherit;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+  background-color: #121829;
+  color: var(--text-color);
+}
+
+.main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1248px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
