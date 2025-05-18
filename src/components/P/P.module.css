@@ -1,0 +1,13 @@
+.paragraph {
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.paragraph.md {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.paragraph.lg {
+  font-size: 20px;
+  line-height: 1.6;
+}
