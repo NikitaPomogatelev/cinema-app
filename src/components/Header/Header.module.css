@@ -3,6 +3,11 @@
   top: 0;
   left: 0;
   width: 100%;
+
+  backdrop-filter: blur(40px);
+  background: rgba(18, 24, 41, 0.8);
+
+  z-index: 99;
 }
 
 .header__inner {
@@ -42,6 +47,11 @@
   text-decoration: none;
   font-size: inherit;
   line-height: inherit;
+  transition: color .3s ease-in;
+}
+
+.header__nav a:hover {
+  color: var(--white-color);
 }
 
 .user {
@@ -89,7 +99,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  
+
   font-weight: 600;
 
   cursor: pointer;

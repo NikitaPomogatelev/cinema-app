@@ -5,16 +5,17 @@ import 'normalize.css';
 import './assets/styles/reset.css';
 import './assets/styles/index.css';
 
-import App from './App.tsx';
 import Auth from './components/pages/Auth/Auth.tsx';
 import Search from './components/pages/Search/Search.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import Favorite from './components/pages/Favorite/Favorite.tsx';
+import Layout from './layout/Layout.tsx';
+import Product from './components/pages/Product/Product.tsx';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <App />,
+		element: <Layout />,
 		children: [
 			{
 				path: '/',
@@ -23,13 +24,30 @@ const router = createBrowserRouter([
 			{
 				path: 'favorite',
 				element: <Favorite /> 
-			}
+			},
+			{
+				path: '/product/:id',
+				element: <Product />,
+				errorElement: <>Ошибка</>,
+				loader: async ({params}) => {
+					await new Promise<void>((resolve) => {
+						setTimeout(() => {
+							resolve();
+							console.log('resolve');
+					
+						}, 1000);
+					});
+					// const { data } = await axios.get(`${PREFIX}/products/${params.id}`);
+
+					// return data;
+				}
+			},
 		]
 		
 	},
 	{
 		path: '/auth',
-		element: <App />,
+		element: <Layout />,
 		children: [
 			{
 				path: 'login',

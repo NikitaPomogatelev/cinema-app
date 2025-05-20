@@ -16,14 +16,16 @@ const Auth = () => {
 		console.log('formValues', formValues);
 	};
 
-	return <>
-		<Heading className={styles['auth__heading']} >Вход</Heading>
-		<form className={styles['auth__form']} onSubmit={login}>
-			<Input id='name' name='name' className={styles['auth__input']} placeholder='Ваше имя' />
+	return (
+		<section className={styles['auth']}>
+			<Heading className={styles['auth__heading']} >Вход</Heading>
+			<form className={styles['auth__form']} onSubmit={login}>
+				<Input id='name' name='name' className={styles['auth__input']} placeholder='Ваше имя' />
 
-			<Button className={styles['auth__btn']}>Войти в профиль</Button>
-		</form>
-	</>;
+				<Button className={styles['auth__btn']}>Войти в профиль</Button>
+			</form>
+		</section>
+	);
 };
 
 export default Auth;

@@ -1,3 +1,7 @@
+.search {
+  padding: 160px 0 80px;
+}
+
 .search__content {
   width: 100%;
   max-width: 588px;

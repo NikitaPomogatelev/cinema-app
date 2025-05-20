@@ -1,10 +1,26 @@
+import { useState } from 'react';
+import CardList from '../../CardList/CardList';
 import { Heading } from '../../Heading/Heading';
+import style from './Favorite.module.css';
+import { MOCK_PRODUCTS } from '../../../data/products';
+import type { ProductCardProps } from '../../ProductCard/ProductCard.props';
+
 
 const Favorite = () => {
+	const [products] = useState<ProductCardProps[]>(MOCK_PRODUCTS);
+
+	const favoriteProducts = products.filter(product => product.isFavorite);
+
 	return (
-		<div>
+		<section className={style['favorite']}>
 			<Heading>Избранное</Heading>
-		</div>
+
+			<CardList data={favoriteProducts} />
+
+			<div className={style['favorite__empty']}>
+				<span>Список пуст. Добавьте фильм в избранное</span>
+			</div>
+		</section>
 	);
 };
 

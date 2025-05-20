@@ -1,3 +1,8 @@
+.footer {
+  backdrop-filter: blur(40px);
+  background: rgba(18, 24, 41, 0.4);
+}
+
 .footer__inner {
   padding: 16px 0;
   display: flex;
@@ -5,7 +10,7 @@
   justify-content: center;
   text-align: center;
 
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
 
   line-height: 1.5;

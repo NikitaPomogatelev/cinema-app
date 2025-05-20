@@ -3,9 +3,15 @@ import Button from '../../Button/Button';
 import { Heading } from '../../Heading/Heading';
 import Input from '../../Input/Input';
 import P from '../../P/P';
-import type { FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
+import CardList from '../../CardList/CardList';
+import { MOCK_PRODUCTS } from '../../../data/products';
+import type { ProductCardProps } from '../../ProductCard/ProductCard.props';
+import NotFoundSearch from '../../NotFoundSearch/NotFoundSearch';
 
 const Search = () => {
+
+	const [products] = useState<ProductCardProps[]>(MOCK_PRODUCTS);
 
 	const searchForm = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -17,22 +23,24 @@ const Search = () => {
 	};
 
 	return (
-		<div className={styles['search__content']}>
-			<Heading className={styles['search__heading']}>Поиск</Heading>
-			<P className={styles['search__text']}>Введите название фильма, сериала или мультфильма для поиска и&nbsp;добавления в&nbsp;избранное.</P>
-			<form className={styles['search__form']} onSubmit={searchForm}>
-				<Input id='search' name='search' className={styles['search__input']} placeholder="Поиск..." isLoop={true} />
-				<Button>Искать</Button>
-			</form>
+		<section className={styles['search']}>
+			<div className={styles['search__content']}>
+				<Heading className={styles['search__heading']}>Поиск</Heading>
+				<P className={styles['search__text']}>Введите название фильма, сериала или мультфильма для поиска и&nbsp;добавления в&nbsp;избранное.</P>
+				<form className={styles['search__form']} onSubmit={searchForm}>
+					<Input id='search' name='search' className={styles['search__input']} placeholder="Поиск..." isLoop={true} />
+					<Button>Искать</Button>
+				</form>
 
-			{/* TODO */}
-			<ul className={styles['search__list']}>
-				<li>Карточка</li>
-			</ul>
 
-		</div>
-		
+			</div>
+			<CardList data={products} />
+
+			<NotFoundSearch />
+
+		</section>
 	);
+	
 };
 
 export default Search;

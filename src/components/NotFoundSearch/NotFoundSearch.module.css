@@ -1,0 +1,27 @@
+.not-found {
+  margin-top: 104px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.not-found__title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 48px;
+
+  /* line-height: 56px; */
+  line-height: 1.16667;
+  letter-spacing: -0.02em;
+  color: var(--cat-skill-color);
+}
+
+.not-found__text {
+  font-weight: 400;
+  font-size: 20px;
+
+  /* line-height: 32px; */
+  line-height: 1.6;
+  text-align: center;
+  color: var(--waterloo-color);
+}
