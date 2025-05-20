@@ -1,27 +1,21 @@
-import Button from './components/Button/Button';
-import { Heading } from './components/Heading/Heading';
-import P from './components/P/P';
 
-
+import { Outlet } from 'react-router';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 
 function App() {
 
 	return (
 		<div className='site-container'>
-			<header>Это шапка</header>
+			<Header />
+
 			<main className='main'>
 				<div className="container">
-
-					<Heading >Поиск</Heading>
-					<Button >Искать</Button>
-					<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure repellat sapiente odio? Dolorum minima fugit consectetur distinctio. Atque, architecto minus.</P>
-					<P size='lg'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure repellat sapiente odio? Dolorum minima fugit consectetur distinctio. Atque, architecto minus.</P>
+					<Outlet />
 				</div>
-
 			</main>
-			<footer>Это подвал</footer>
-    
-       
+
+			<Footer />
 		</div>
 	);
 }

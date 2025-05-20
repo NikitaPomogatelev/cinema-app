@@ -7,6 +7,11 @@
   --heading-color: #ebeef5;
   --text-color: #8e95a9;
   --yellow-orange-color: #ffad49;
+  
+  --fiord-color: #475069;
+  --blue-wood-color: #323b54;
+  --input-color: #ebeef5;
+  --nav-link-color: #a8aebf;
 
   --white-color: #fff;
   --black-color: #000;
@@ -41,9 +46,15 @@ div#root {
   min-height: inherit;
   background-color: #121829;
   color: var(--text-color);
+
+  background-image: url('/src/assets/img/bg.svg');
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-position: center;
 }
 
 .main {
+  padding-top: 160px;
   flex: 1;
 }
 
@@ -52,4 +63,12 @@ div#root {
   max-width: 1248px;
   padding: 0 24px;
   margin: 0 auto;
+}
+
+.bg-colors {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }

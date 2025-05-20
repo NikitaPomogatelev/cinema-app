@@ -1,0 +1,17 @@
+.auth__heading {
+	margin-bottom: 27px;
+}
+
+.auth__form {
+	display: flex;
+	flex-direction: column;
+	gap: 27px;
+}
+
+.auth__input {
+
+}
+
+.auth__btn {
+	max-width: 201px;
+}
