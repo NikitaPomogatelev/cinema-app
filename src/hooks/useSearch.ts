@@ -2,8 +2,7 @@ import { debounce } from '@/utils/debounce';
 import { useState,  useMemo , type FormEvent, useCallback } from 'react';
 
 export const useSearch = () => {
-	
-	const [query, setQuery] = useState('');
+	const [query, setQuery] = useState<string>('');
 
 	const debouncedSearch = useMemo(() => 
 		debounce((value: string) => {
