@@ -4,29 +4,21 @@ import cn from 'classnames';
 import type { InputProps } from './Input.props';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-	{ isValid = false, isLoop = false, className, ...props },
+	{ isInvalid = false, isLoopIcon = false, className, ...props },
 	ref
 ) {
-	const inputElement = (
-		<input
-			ref={ref}
-			className={cn(styles['input'], className, {
-				[styles['input__icon']]: isLoop,
-				[styles['invalid']]: isValid
-			})}
-			{...props}
-		/>
-	);
 
-	return (
-		<>
-			{isLoop ? (
-				<div className={cn(styles['input-wrap'], className)}>{inputElement}</div>
-			) : (
-				inputElement
-			)}
-		</>
-	);
+	const inputClassName = cn(styles['input'], className, {
+		[styles['input__icon']]: isLoopIcon,
+		[styles['invalid']]: isInvalid
+	});
+
+	
+
+	if (isLoopIcon) {
+		return <div className={cn(styles['input-wrap'], className)}> <input ref={ref} className={inputClassName} {...props} /></div>;
+	}
+	return <input ref={ref} className={inputClassName} {...props} />;
 });
 
 export default Input;

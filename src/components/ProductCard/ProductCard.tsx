@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import FavoriteButton from './FavoriteButton';
 import styles from './ProductCard.module.css';
 import type { ProductCardProps } from './ProductCard.props';
@@ -5,7 +6,7 @@ import RateBadge from './RateBadge';
 
 const ProductCard = ({ id, imgSrc = '', title = '', rating = 0, isFavorite  }: ProductCardProps) => {
 	return (
-		<a href={`product/${id}`} className={styles['card__link']}>
+		<Link to={`product/${id}`} className={styles['card__link']}>
 			<article className={styles['card']}>
 				<div className={styles['card__image']}>
 					<img src={imgSrc} width={264} height={400} draggable="false" alt="Превью для фильма" />
@@ -19,7 +20,7 @@ const ProductCard = ({ id, imgSrc = '', title = '', rating = 0, isFavorite  }: P
 					</div>
 				</div>
 			</article>
-		</a>
+		</Link>
 	);
 };
 

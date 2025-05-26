@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import CardList from '../../CardList/CardList';
-import { Heading } from '../../Heading/Heading';
+
 import style from './Favorite.module.css';
 import { MOCK_PRODUCTS } from '../../../data/products';
 import type { ProductCardProps } from '../../ProductCard/ProductCard.props';
+import Heading from '@/components/Heading/Heading';
 
 
 const Favorite = () => {
