@@ -1,0 +1,32 @@
+.search {
+  padding: 160px 0 80px;
+}
+
+.search__content {
+  width: 100%;
+  max-width: 588px;
+}
+
+.search__heading {
+  margin-bottom: 16px;
+}
+
+.search__text {
+  margin-bottom: 24px;
+}
+
+.search__form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.search__input {
+  width: 100%;
+  max-width: 385px;
+}
+
+.search__list {
+  margin-top: 80px;
+}

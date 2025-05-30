@@ -8,14 +8,31 @@
   --text-color: #8e95a9;
   --yellow-orange-color: #ffad49;
 
+  --fiord-color: #475069;
+  --blue-wood-color: #323b54;
+  --input-color: #ebeef5;
+  --cat-skill-color: #ebeef5;
+  --nav-link-color: #a8aebf;
+  --shamrock-color: #37d8a7;
+  --waterloo-color: #767e94;
+  --parfume-color: #beb7fb;
+  --ghost-color: #c3c8d4;
+
   --white-color: #fff;
   --black-color: #000;
+}
+
+html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  
+
   font-family: var(--font);
   font-weight: 400;
   font-size: 20px;
@@ -34,6 +51,11 @@ div#root {
   min-height: inherit;
   background-color: #121829;
   color: var(--text-color);
+
+  background-image: url("/src/assets/img/bg.svg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-position: center;
 }
 
 .main {
@@ -45,4 +67,12 @@ div#root {
   max-width: 1248px;
   padding: 0 24px;
   margin: 0 auto;
+}
+
+.bg-colors {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }

@@ -1,0 +1,13 @@
+.favorite {
+  padding: 160px 0 80px;
+}
+
+.favorite__empty {
+  padding: 80px 0;
+
+  font-weight: 600;
+  font-size: 26px;
+
+  line-height: 1.16667;
+  color: var(--cat-skill-color);
+}
