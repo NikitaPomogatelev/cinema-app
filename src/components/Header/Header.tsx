@@ -1,11 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import styles from './Header.module.css';
 import LogoIcon from '../Icon/LogoIcon';
+import { useAuth } from '@/hooks/useAuth';
+
 
 const Header = () => {
-	const [ isLogined ] = useState<boolean>(false);
+	const navigate = useNavigate();
 
+	const { logout, user } = useAuth();
+
+	const handleLogout = () => {
+		logout();
+		navigate('/auth/login');
+	};
 
 	return (
 		<header className={styles['header']}>
@@ -20,14 +27,14 @@ const Header = () => {
 							<Link to={'/'} >Поиск фильмов</Link>
 							<Link to={'/favorite'} className={styles['header__films']} >Мои фильмы <span>2</span></Link>
 
-							{isLogined  && <div className={styles['user']}>
-								<span>Никита</span>
+							{user?.isLogined && <div className={styles['user']}>
+								<span>{user.name}</span>
 								<span className={styles['user__icon']}>
 									<img src="/src/assets/img/user-icon.svg" alt="Иконка пользователя" />
 								</span>
 							</div>
 							}
-							{isLogined ? <button className={styles['nav__btn-exit']}>Выйти
+							{user?.isLogined ? <button className={styles['nav__btn-exit']} onClick={handleLogout}>Выйти
 								<img src="/src/assets/img/exit-icon.svg" alt="Иконка пользователя" />
 							</button> : <Link to={'/auth/login'} >Войти </Link>	}
 						</nav>

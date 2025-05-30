@@ -1,11 +1,8 @@
-import { useCallback } from 'react';
+import { AuthContext } from '@/context/AuthContext';
+import { useContext } from 'react';
 
 export const useAuth = () => {
-	const login = useCallback((formData: FormData) => {
-		const formValues = Object.fromEntries(formData);
-    
-		console.log('formValues', formValues);
-	}, []);
-
-	return { login };
+	const ctx = useContext(AuthContext);
+	if (!ctx) throw new Error('ctx не определён');
+	return ctx;
 };
